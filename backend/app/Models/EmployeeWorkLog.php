@@ -9,7 +9,7 @@ class EmployeeWorkLog extends Model
     protected $primaryKey = 'workLog_id';
 
     protected $fillable = [
-        'serviceSchedule_id',
+        'schedule_id',
         'employee_id',
         'actual_work_start',
         'actual_work_end',
@@ -20,12 +20,12 @@ class EmployeeWorkLog extends Model
         'approval_status',
         'reviewed_by',
         'reviewed_at',
-        'rejection_reason'
+        'rejection_reason',
     ];
 
     public function schedule()
     {
-        return $this->belongsTo(ServiceSchedule::class, 'serviceSchedule_id');
+        return $this->belongsTo(ServiceSchedule::class, 'schedule_id');
     }
 
     public function employee()

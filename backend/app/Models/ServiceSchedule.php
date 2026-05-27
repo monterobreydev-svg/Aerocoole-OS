@@ -30,7 +30,8 @@ class ServiceSchedule extends Model
         return $this->belongsTo(EmployeeInfo::class, 'employee_id');
     }
 
-    public function workLogs(){
-        return $this->hasMany(EmployeeWorkLog::class, 'serviceSchedule_id');
+    public function workLogs()
+    {
+        return $this->hasMany(EmployeeWorkLog::class, 'schedule_id');
     }
 }
